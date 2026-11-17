@@ -42,7 +42,7 @@ const handleSubmit = async (answers: PersonAnswers[], excludeTitles: string[] = 
   setStatus('loading')
   const groupInput = answers.map(buildPersonSentence).join("\n\n");
     try {
-      const response = await fetch('http://localhost:3000/api/recommend', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/recommend`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
